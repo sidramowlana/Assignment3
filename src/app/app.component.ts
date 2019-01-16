@@ -5,7 +5,6 @@ import { UsersService } from './UsersService.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
-  providers: [UsersService]
 })
 export class AppComponent implements OnInit {
   activeUser:string[];

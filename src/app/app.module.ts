@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActiveUserComponent } from './active-user/active-user.component';
 import { InactiveUserComponent } from './inactive-user/inactive-user.component';
+import { CounterService } from './CounterService.servie';
+import { UsersService } from './UsersService.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { InactiveUserComponent } from './inactive-user/inactive-user.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UsersService,CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
