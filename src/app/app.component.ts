@@ -1,23 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UsersService } from './UsersService.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
+  providers: [UsersService]
 })
-export class AppComponent {
-  activeUser = ['luffy','zoro'];
-  inactiveUser = ['sanji','robin'];
+export class AppComponent implements OnInit {
+  activeUser:string[];
+  inactiveUser:string[];
 
-  onSetToActive(id:number)
+  constructor(private usersService:UsersService)
+  {}
+  ngOnInit()
   {
-    this.activeUser.push(this.inactiveUser[id]);
-    this.inactiveUser.slice(id,1);
-  }
-
-  onSetToInactive(id:number)
-  {
-    this.inactiveUser.push(this.activeUser[id]);
-    this.activeUser.slice(id,1);
+    this.activeUser = this.usersService.activeUser;
+    this.inactiveUser = this.usersService.inactiveUser;
   }
 }
