@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-active-user 
+                [users]="activeUser"
+                (inactivatingUser)="onSetToInactive($event)"></app-active-user>
+                
+            <app-inactive-user 
+                [users]="inactiveUser"
+                (activatingUser)="onSetToActive($event)"></app-inactive-user>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
